@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff5f8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="عالم صغير صُنع لصبرينة، بكل الحب.">
+  <title>عشانكك ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* نفس ألوان وخطوط وتفاصيل الموقع الأصلي (css/style.css) */
+    :root {
+      --cream: #fff8fa; --pink: #f6dce8; --pink-deep: #d9a6ba; --rose: #b97998;
+      --lavender: #e5def8; --lavender-deep: #b7a7df; --ink: #594957; --muted: #917f8e;
+      --gold: #c4a477; --white: #fffdfd; --shadow: 0 20px 60px rgba(150, 111, 139, .12);
+      --arabic: "Cairo", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; color: var(--ink); font-family: var(--arabic); font-weight: 400; overflow: hidden;
+      background:
+        radial-gradient(circle at 8% 15%, rgba(246,220,232,.48), transparent 28rem),
+        radial-gradient(circle at 92% 42%, rgba(229,222,248,.48), transparent 30rem),
+        var(--cream);
+    }
+    ::selection { background: #efd0df; color: #65485d; }
+    h1, p { margin-top: 0; }
+
+    .ambient { position: fixed; z-index: 0; width: 24rem; height: 24rem; border-radius: 50%; filter: blur(80px); opacity: .22; pointer-events: none; }
+    .ambient-one { background: #efcadd; top: 10%; left: -15rem; }
+    .ambient-two { background: #d9cff4; right: -16rem; bottom: 4%; }
+    .sparkle-field {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: .38;
+      background-image: radial-gradient(#c7a7c0 1px, transparent 1px); background-size: 58px 58px;
+      mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+      -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+    }
+    .orbit { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 50%; border: 1px solid rgba(217,166,186,.3); pointer-events: none; z-index: 0; }
+    .orbit-a { width: min(88vw, 690px); aspect-ratio: 1; }
+    .orbit-b { width: min(108vw, 830px); aspect-ratio: 1; border-color: rgba(183,167,223,.22); }
+    .floating { position: fixed; z-index: 0; color: #d4a3bb; pointer-events: none; }
+    .heart-one { left: 7%; top: 24%; font-size: 2.2rem; animation: float 6s ease-in-out infinite; }
+    .heart-two { right: 7%; bottom: 23%; font-size: 1.7rem; animation: float 5s ease-in-out infinite reverse; }
+    .star-one { right: 9%; top: 19%; font-size: 2rem; color: var(--lavender-deep); }
+    .star-two { left: 10%; bottom: 18%; font-size: 1.4rem; color: var(--gold); }
+
+    .gate { position: relative; z-index: 1; min-height: 100%; display: grid; place-items: center; padding: 22px; overflow-y: auto; text-align: center; }
+    .gate-card {
+      width: min(100%, 560px); padding: 40px 24px; border: 1px solid rgba(217,166,186,.35); border-radius: 28px;
+      background: rgba(255,255,255,.72); box-shadow: var(--shadow);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    }
+    .gate-icon { color: #d8a8bf; font-size: 2.6rem; margin-bottom: 8px; animation: float 5s ease-in-out infinite; }
+    .eyebrow { color: var(--rose); font-size: .78rem; font-weight: 500; margin-bottom: 0; }
+    .gate-card h1 { margin: 10px 0 12px; font-family: var(--arabic); font-weight: 500; font-size: clamp(1.8rem, 6vw, 2.6rem); line-height: 1.5; color: var(--ink); }
+    .gate-card h1 em { color: var(--rose); font-style: normal; font-weight: 500; }
+    .gate-text { color: var(--muted); line-height: 2; margin: 0 0 24px; }
+    .countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 22px; direction: rtl; }
+    .countdown div { padding: 14px 4px; border-radius: 18px; background: var(--white); border: 1px solid rgba(217,166,186,.3); }
+    .countdown strong { display: block; font-size: clamp(1.4rem, 6vw, 2rem); color: var(--rose); font-weight: 700; line-height: 1.3; }
+    .countdown span { font-size: .78rem; color: var(--muted); }
+    .primary-button {
+      display: inline-block; border: 0; border-radius: 999px; padding: 15px 25px; margin-bottom: 4px; text-decoration: none;
+      background: linear-gradient(110deg, #d9a6ba, #bcaee4); color: white; cursor: pointer; font-family: var(--arabic); font-size: .85rem;
+      box-shadow: 0 10px 28px rgba(185,121,152,.22); transition: transform .25s, box-shadow .25s;
+    }
+    .primary-button:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(185,121,152,.3); }
+    .primary-button:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
+    .primary-button span { margin-right: 8px; }
+    .micro-note { font-size: .78rem; color: #a895a3; margin: 14px 0 0; line-height: 1.9; }
+
+    @keyframes float { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-12px) rotate(4deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="sparkle-field" aria-hidden="true"></div>
+  <div class="orbit orbit-a" aria-hidden="true"></div>
+  <div class="orbit orbit-b" aria-hidden="true"></div>
+  <div class="floating heart-one" aria-hidden="true">♡</div>
+  <div class="floating heart-two" aria-hidden="true">♡</div>
+  <div class="floating star-one" aria-hidden="true">✧</div>
+  <div class="floating star-two" aria-hidden="true">✦</div>
+
+  <main class="gate">
+    <div class="gate-card">
+      <div class="gate-icon" aria-hidden="true">✿</div>
+      <p class="eyebrow" id="eyebrow">مفاجأة صغيرة</p>
+      <h1 id="title">عالمكِ الصغير<br><em>لم يُفتح بعد</em></h1>
+      <p class="gate-text" id="text">هناك شيء يُحضَّر لكِ بكل حب، وسيُفتح في موعده تماماً.</p>
+      <div class="countdown" role="timer" aria-live="off">
+        <div><strong id="cdDays">٠</strong><span>يوم</span></div>
+        <div><strong id="cdHours">٠٠</strong><span>ساعة</span></div>
+        <div><strong id="cdMinutes">٠٠</strong><span>دقيقة</span></div>
+        <div><strong id="cdSeconds">٠٠</strong><span>ثانية</span></div>
+      </div>
+      <a class="primary-button" id="openLink" href="sabrine-birthday-arabic/index.html" hidden>افتحي عالمك الصغير <span>♡</span></a>
+      <p class="micro-note" id="dateNote">٢٣ نوفمبر ٢٠٢٦ · الساعة <bdi dir="ltr">23:00</bdi> بتوقيت <bdi dir="ltr">GMT</bdi> <span>♡</span></p>
+      <p class="micro-note" id="localNote" hidden></p>
+    </div>
+  </main>
+
+  <script>
+  (function () {
+    "use strict";
+    // موعد فتح الموقع: 23 نوفمبر 2026 – 23:00 بتوقيت GMT (UTC)
+    var UNLOCK_AT = Date.parse("2026-11-23T23:00:00Z");
+    var SITE_URL = "sabrine-birthday-arabic/index.html";
+
+    var offset = 0;        // فرق ساعة الخادم عن ساعة الجهاز
+    var opening = false;
+    var timerId = null;
+
+    var el = function (id) { return document.getElementById(id); };
+    var parts = { d: el("cdDays"), h: el("cdHours"), m: el("cdMinutes"), s: el("cdSeconds") };
+
+    function now() { return Date.now() + offset; }
+
+    function ar(value, pad) {
+      var s = String(value);
+      while (pad && s.length < pad) s = "0" + s;
+      return s.replace(/\d/g, function (d) { return "٠١٢٣٤٥٦٧٨٩"[Number(d)]; });
+    }
+
+    // مزامنة مع ساعة الخادم حتى لا يعتمد الفتح على ساعة الجهاز فقط
+    function sync(done) {
+      var finished = false;
+      function end() { if (!finished) { finished = true; if (done) done(); } }
+      if (!window.fetch || location.protocol === "file:") { end(); return; }
+      var guard = setTimeout(end, 4000);
+      fetch(location.href, { method: "HEAD", cache: "no-store" })
+        .then(function (res) {
+          var header = res.headers.get("Date");
+          var serverTime = header ? Date.parse(header) : NaN;
+          if (!isNaN(serverTime)) offset = serverTime - Date.now();
+        })
+        .catch(function () { /* نكتفي بساعة الجهاز */ })
+        .then(function () { clearTimeout(guard); end(); });
+    }
+
+    function render(diff) {
+      var total = Math.floor(diff / 1000);
+      parts.d.textContent = ar(Math.floor(total / 86400));
+      parts.h.textContent = ar(Math.floor((total % 86400) / 3600), 2);
+      parts.m.textContent = ar(Math.floor((total % 3600) / 60), 2);
+      parts.s.textContent = ar(total % 60, 2);
+    }
+
+    function showOpened() {
+      el("eyebrow").textContent = "حان الموعد";
+      el("title").innerHTML = "عالمكِ الصغير<br><em>فُتح الآن</em>";
+      el("text").textContent = "جارٍ فتح عالمكِ الصغير…";
+      render(0);
+      el("dateNote").hidden = true;
+      el("localNote").hidden = true;
+      el("openLink").hidden = false;
+    }
+
+    function openSite() {
+      if (opening) return;
+      opening = true;
+      // فحص أخير مع الخادم قبل الانتقال
+      sync(function () {
+        if (now() < UNLOCK_AT) { opening = false; tick(); return; }
+        showOpened();
+        setTimeout(function () { location.replace(SITE_URL); }, 1600);
+      });
+    }
+
+    function tick() {
+      clearTimeout(timerId);
+      var diff = UNLOCK_AT - now();
+      if (diff <= 0) { openSite(); return; }
+      render(diff);
+      timerId = setTimeout(tick, 1000 - (now() % 1000) + 20);
+    }
+
+    // الموعد بتوقيت جهاز المستخدم (إذا كان مختلفاً عن GMT)
+    try {
+      if (new Date().getTimezoneOffset() !== 0) {
+        var f = new Intl.DateTimeFormat("ar-u-nu-arab-ca-gregory", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit", hour12: false });
+        var note = el("localNote");
+        note.textContent = "أي بتوقيت جهازكِ: " + f.format(new Date(UNLOCK_AT));
+        note.hidden = false;
+      }
+    } catch (e) { /* لا شيء */ }
+
+    document.addEventListener("visibilitychange", function () { if (!document.hidden) tick(); });
+
+    tick();
+    sync();
+  })();
+  </script>
+</body>
+</html>

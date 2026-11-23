@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff5f8">
+  <meta name="description" content="عالم صغير صُنع لصبرينة، بكل الحب.">
+  <title> عشانكك ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/lock.js"></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body class="arabic-site">
+  <!-- شاشة القفل: تختفي تلقائياً عند 23 نوفمبر 2026 – 23:00 GMT -->
+  <div class="lock-screen" id="lockScreen" dir="rtl" lang="ar">
+    <div class="lock-card">
+      <div class="lock-icon" aria-hidden="true">✿</div>
+      <p class="eyebrow">مفاجأة صغيرة</p>
+      <h1>عالمكِ الصغير<br><em>لم يُفتح بعد</em></h1>
+      <p class="lock-text">هناك شيء يُحضَّر لكِ بكل حب، وسيُفتح في موعده تماماً.</p>
+      <div class="lock-countdown" role="timer" aria-live="off">
+        <div><strong id="lockDays">٠</strong><span>يوم</span></div>
+        <div><strong id="lockHours">٠٠</strong><span>ساعة</span></div>
+        <div><strong id="lockMinutes">٠٠</strong><span>دقيقة</span></div>
+        <div><strong id="lockSeconds">٠٠</strong><span>ثانية</span></div>
+      </div>
+      <p class="micro-note">٢٣ نوفمبر ٢٠٢٦ · الساعة <bdi dir="ltr">23:00</bdi> بتوقيت <bdi dir="ltr">GMT</bdi> <span>♡</span></p>
+    </div>
+  </div>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="sparkle-field" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <span class="brand"> حبيتيي الغالية <span>♡</span></span>
+    <div class="top-actions">
+      <button class="music-button" id="musicToggle" type="button" aria-pressed="false">
+        <span class="music-icon">♫</span><span id="musicLabel">الموسيقى متوقفة</span>
+      </button>
+      
+    </div>
+    
+  </header>
+
+  <main id="chapterStage">
+    <!-- 01 / THE INVITATION -->
+    <section class="chapter hero section" id="home">
+      <div class="hero-orbit orbit-a"></div>
+      <div class="hero-orbit orbit-b"></div>
+      <div class="hero-content">
+        <p class="eyebrow">عالم صغير صُنع لكِ وحدكِ</p>
+        <div class="hero-flower" aria-hidden="true">✿</div>
+        <h1>إلى<br><em> الشخص الذي اعشقه </em></h1>
+        <p class="hero-subtitle">عالم صغير، لكنه يحمل الكثير مما أريد قوله لكِ.</p>
+        <button class="primary-button" id="openWorld" type="button">افتحي عالمك الصغير <span>♡</span></button>
+        <p class="micro-note">خذي وقتكِ، هناك تفاصيل صغيرة تنتظركِ.</p>
+      </div>
+      <div class="floating-heart heart-one">♡</div>
+      <div class="floating-heart heart-two">♡</div>
+      <div class="floating-star star-one">✧</div>
+      <div class="floating-star star-two">✦</div>
+      
+    </section>
+
+    <!-- 02 / BIRTHDAY -->
+    <section class="chapter section birthday-section" id="birthday">
+      <div class="section-heading">
+        <p class="eyebrow">الفصل الأول · يومكِ أنتِ</p>
+        <h2>عيد ميلاد سعيد<br><em> كبيدتيي </em> <span class="pink-heart">♡</span></h2>
+        <p class="section-intro">سنة جديدة لكِ، وأمنيات كثيرة أتمنى أن تقترب منكِ.</p>
+      </div>
+      <div class="birthday-card">
+        <div class="cake-wrap">
+          <div class="cake-sparkle">✧</div>
+          <div class="candle-row" id="candles" aria-label="شموع عيد الميلاد">
+            <button class="candle lit" type="button" aria-label="أطفئي الشمعة الأولى"><i></i></button>
+            <button class="candle lit" type="button" aria-label="أطفئي الشمعة الثانية"><i></i></button>
+            <button class="candle lit" type="button" aria-label="أطفئي الشمعة الثالثة"><i></i></button>
+          </div>
+          <div class="cake">
+            <div class="icing"></div>
+            <div class="cake-decoration">·　♡　·</div>
+            <div class="cake-base"></div>
+          </div>
+          <p class="cake-hint">أطفئي الشموع وتمنّي أمنية</p>
+        </div>
+        <div class="wish-reveal" id="candleMessage" aria-live="polite">
+          <span class="tiny-label">أمنية صغيرة لعيد ميلادكِ</span>
+          <p>أتمنى أن تحمل لكِ سنتكِ الجديدة راحةً وفرحاً وأسباباً كثيرة للابتسام.</p>
+        </div>
+      </div>
+      <p class="arabic-line" lang="ar" dir="rtl">كل عام وأنتِ بخير عشقيي. أتمنى تكون ذي السنة ألطف عليكِ، وأن تقتربي فيها من كل ما تتمنينه.</p>
+    </section>
+
+    <!-- 03 / REASONS -->
+    <section class="chapter section reasons-section" id="reasons">
+      <div class="section-heading">
+        <p class="eyebrow">الفصل الثاني · تفاصيلكِ الصغيرة</p>
+        <h2>أشياء اعشقها<br><em>فيكِ</em></h2>
+        <p class="section-intro">هذه بعض التفاصيل التي اعشقها فيكِ. افتحي كل بطاقة.</p>
+      </div>
+      <div class="reason-grid">
+        <button class="reason-card" type="button" aria-expanded="false">
+          <span class="card-number">01</span><span class="card-symbol">✿</span>
+          <strong>جمالكِ وتفاصيلكِ</strong><span class="reason-hidden">أحب ملامحكِ وعينيكِ وشعركِ وشامتكِ الصغيرة، وكل تفصيل فيكِ بطريقتكِ أنتِ.</span>
+          <small>افتحي البطاقة</small>
+        </button>
+        <button class="reason-card" type="button" aria-expanded="false">
+          <span class="card-number">02</span><span class="card-symbol">☁</span>
+          <strong>مزاحكِ</strong><span class="reason-hidden">أحب خفة دمكِ، والطريقة التي تجعلين بها لحظة عادية ذكرى صغيرة بيننا.</span>
+          <small>افتحي البطاقة</small>
+        </button>
+        <button class="reason-card" type="button" aria-expanded="false">
+          <span class="card-number">03</span><span class="card-symbol">♡</span>
+          <strong>رسائلكِ</strong><span class="reason-hidden">في كل رسالة، وفي كل كلمة بيننا، أجد سبباً جديداً يجعلني أقع في حبكِ من جديد.</span>
+          <small>افتحي البطاقة</small>
+        </button>
+        <button class="reason-card" type="button" aria-expanded="false">
+          <span class="card-number">04</span><span class="card-symbol">✧</span>
+          <strong>شامتكِ الصغيرة</strong><span class="reason-hidden">الشامة التي فوق أنفكِ ليست أكثر تفصيل أفضّله، لكنها من التفاصيل التي أعشقها فيكِ.</span>
+          <small>افتحي البطاقة</small>
+        </button>
+        <button class="reason-card" type="button" aria-expanded="false">
+          <span class="card-number">05</span><span class="card-symbol">☾</span>
+          <strong>تفاصيل يومكِ</strong><span class="reason-hidden">أحب حين تشاركينني ما حدث معكِ، حتى لو بدا لكِ شيئاً عادياً أو بسيطاً.</span>
+          <small>افتحي البطاقة</small>
+        </button>
+        <button class="reason-card" type="button" aria-expanded="false">
+          <span class="card-number">06</span><span class="card-symbol">❀</span>
+          <strong>أنتِ كما أنتِ</strong><span class="reason-hidden">بضحكتكِ وكسلكِ ومزاحكِ ومزاجكِ وعيوبكِ أيضاً. لم أحب نسخة مثالية، أحببتكِ أنتِ.</span>
+          <small>افتحي البطاقة</small>
+        </button>
+      </div>
+    </section>
+
+    <!-- 04 / STORY -->
+    <section class="chapter section story-section" id="story">
+      <div class="section-heading">
+        <p class="eyebrow">الفصل الثالث · حكايتنا الصغيرة</p>
+        <h2>بدايات صغيرة<br><em>صارت حكايتنا</em></h2>
+        <p class="section-intro">لا أحتاج أن تكون حكايتنا مثالية. يكفيني أنها حكايتنا.</p>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <span class="timeline-dot">♡</span>
+          <div class="timeline-card"><span class="tiny-label">البداية</span><h3>حديث بدأ من موقف عابر</h3><p>أتذكر كيف اقتربنا أكثر بعد ذلك الخلاف بين ناغي ورينغوكو. أردت وقتها أن أواسيكِ، ولم أكن أعرف أن ذلك الحديث سيصبح بداية شيء بهذا القدر من الأهمية عندي.</p></div>
+        </article>
+        <article class="timeline-item">
+          <span class="timeline-dot">✧</span>
+          <div class="timeline-card"><span class="tiny-label">مع الوقت</span><h3>صارت التفاصيل تعنيني</h3><p>تعرفت أكثر على طريقتكِ في الكلام ومزاحكِ وضحكتكِ وكسلكِ، وصرت أنتظر حتى أحاديثنا العادية.</p></div>
+        </article>
+        <article class="timeline-item">
+          <span class="timeline-dot">☾</span>
+          <div class="timeline-card"><span class="tiny-label">تفصيل لا أنساه</span><h3>حين رأيت وجهكِ</h3><p>كان ذلك من اللحظات التي قرّبتكِ إلى قلبي أكثر، وصارت بعض التفاصيل الصغيرة، ومنها شامتكِ فوق أنفكِ، عزيزة عليّ.</p></div>
+        </article>
+        <article class="timeline-item">
+          <span class="timeline-dot">❀</span>
+          <div class="timeline-card"><span class="tiny-label">ما زالت مستمرة</span><h3>أيام لم نعشها بعد</h3><p>أتمنى أن يأتي يوم لا أكتفي فيه بسماع تفاصيل يومكِ، بل أكون قريباً لأشارككِ إياها.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 05 / LETTER -->
+    <section class="chapter section letter-section" id="letter">
+      <div class="section-heading">
+        <p class="eyebrow">الفصل الرابع · منّي إليكِ</p>
+        <h2>كلام منّي<br><em>إليكِ</em></h2>
+        <p class="section-intro">لا شعر ولا كلمات معقدة. فقط كلام أريدكِ أن تعرفيه.</p>
+      </div>
+      <button class="simple-envelope" id="letterToggle" type="button" aria-controls="letterPaper" aria-expanded="false">
+        <span class="envelope-icon" aria-hidden="true">✉</span>
+        <span>رسالة صغيرة لكِ</span>
+        <small>اضغطي لفتحها</small>
+      </button>
+      <article class="letter-paper full-letter" id="letterPaper" lang="ar" dir="rtl" hidden>
+        <p class="letter-date">٢٤ نوفمبر ٢٠٢٦ · عيد ميلادكِ</p>
+        <div class="letter-copy">
+<p>الى اغلى انسانة في حياتي 🤍</p>
+<p>اول مرة تقابلنا فيها لما دخلتي شيرو وقتها كانت نقابة جديدة وطلبتي تصيري مشرف لهيك طلبت من اوساراغي-روكيا تدربك ، وهيك بداتي تترفعي في الرتب وصرتي ملازمة فوقت قصير .</p>
+<p>بس متى صرنا قراب اول مرة ومتى طحت فحبك كانت كانت لما وقع الشجار بين ناغي وذاك الشخص واعرف انو نيتك كانت طيبة بس شيء ادى لشيء ورينغو اتشاجر مع ناغي وناغي صار يقول انك السبب لهيك كاي ادميرال وكاي مشرف من نقابتي من واجبي اطمن عليك واعرف ايش حصل وليش خرجتي وكيف ، وكان دا افضل قرار فحياتي الحمد لله .</p>
+<p>وقتها حكيتي لي المشكل وشوية من حياتك وعلاقتك السابقة وفكل كلمة كنت باشوف اكثر فتاة اعجبت فيها وحسيت انها قريبة لي فحياتي كلها ، مع كل كلمة وكل دقيقة كنت باحبك اكثر وباصنع انطباعات وتوقعات عنك ، عن انك لطيفة ، حنونة ، قلبك طيب ، شخص بيشبهني ويقدر يفهمني ، شخص ما كان بدي اشوفه زعلان او قلق ، فتاة بمية رجل ، بديت اشوفك جوهرة بين كومة من الفحم ، ادري انه بيبدو مبالغة بس من وقتها وللحين دي صورتي عنك ، واقسمت وقتها اني مو لازم اشوفك زعلانة ابدا ، عشانك بتلقي اللوم على نفسك فكل شيء ، دي الحاجات كرهتني فزعلك وخلتني اتمنى لو اقدر احضنك وطمنك انو مهما الدنيا انقلبت وقست عليك انا دايما باجانبك وديما هاحارب عشانك ، ومستعد افديكي بروحي وبكياني كله .</p>
+<p>وبتمر الايام والاسابيع وبنتقرب من بعضنا خصوصا لما بدينا نلعب صراحة وتحدي مع كاكاشي ، وقتها كنت احاول اخليكي بجنبي عشانك صرتي منطقة الامان الخاصة بي ، الشخص الي لما اكلمه بانسى همومي كلها ، والوحيدة الي بتملئ عيوني ، وبمرور الايام باتاكد من ابطباعاتي الاولى عنك وباتاكد اني ما اخطات فيك وحبي لك بيزيد ويتضاعف ، وتعلقي بيك بيصير اكثر واكتر ، لين اليوم الي سالتيني فيه عن البنت الي معجب فيها فداك الوقت ، لهيك قررت اقول الي بقلبي واي نتيجة منك هاتقبلها كما هي ، ولكن لما اعترفتي انك بتبادليني نفس الشعور كنت رح انفجر من الفرحة ، فرحان لدرجة الموووت ، اتمنيت لو اليوم ما ينتهي واتمنيت لو اقدر ابخر المسافة الي كانت بيننا ،ووعدت نفسي اني هاصير الراجل الي بدك ياه ، الشخص الي هتفخري من انك اخترتيه ، وللحين باتمنى وباحاول ومستعد اضحي باي شيء عشان اصير ذاك الشخص ، عشان ما بدي تكون مجرد علاقة عابرة او العب بس بمشاعرك ووعود زائفة ، بدي تكوني الانسانة الي اعيش معها حياتي كلها ، الي اقدر كل يوم اصبح عليه فحضني وتكون زوجتي الي باحبها وهاضل احبها ، انتي وحدك ومتفي حد غيركك .</p>
+<p>وتمر الايام وكل ثانية كل كلمة كل لحضة حبي لك بيتضاعف وبيزيد وتعلقي وامالي بتزيد معه ، وكل دقيقة من يومي تمر بدونك شوقي لك بيزيد اكثر واكثرر ، احيانا باكون بدي اسالك واصارحك واكلمك في كثير اشياء بس باكون خايف اثقل عليك او اخسرك وادري انك هتزعلي مني بكلامي دا 🙃🙃 ، بس والله ما اتحمل ابدا اكون عبء عليك ابدا ، مع انو في كثير اشياء كان بدي اعرفها عنك وكثير امور كان بدي اصارحك بيها ، لهيك هاستغل دي الرسالة عشان افرغ الي فقلبي ، عالاقل جزء منه عشان مابدي اطول الرسالة اكثر 🙂 .</p>
+<p>تتذكري لما قلت لك اني بدي اتعرف عليك اكثر و سالتيني عن شو بدي اعرف ، الصراحة هي اني كان ودي اعرف كل شيء ، كل شيء من اول لحظة تتذكريها فصغرك ، لين طفولتك ، حياتك الشخصية والدراسية ، تفاصيل يومك ، مشاكلك مخاوفك طموحاتك اهدافك امانيك ، كل شيء ولسا ما فان الاوان وللحين بدي اعرف كل شيء عنك ، كيف ما هو ما بيهمني ، باحبك كنا انت بعيوبك وسلبياتك واخطائك ، احبها كلها وباتقبلها ، واي كلمة او اعتراف منك مو محتاجة تجامليه عشانك اصلا فنضري انسانة كاملة ، وافضل بنت عرفتها وحبيتها في العالم كله ، وانا متاكد اني ما رح لاقي زيك ولو لاقيت انا بدياك انتي وحدك ، ما رح ارضى بغيرك ، لهيك ما تحتاجي تخبي عني او تخافي من نظرتي ليك ، عشان حتى عيوبك واخطائك تزيد تخليكي كاملة ومثالية وتزيد حبي ليك .</p>
+<p>المرة الاولى الي شفت فيها وجهك ، لما ارسلتي لي صورتك ، حاولت اخلي المحادثة تمر عادي ، بس والله اني عشقتكككك ، وعشان دي الفقرة زي فقرة شكلك ، بدي اقول لك ولو انك مش اجمل وحدة ولو في اشخاص رح يقولو انك مش جميلة ما يهمني ، انتي اكثر انسانة مثالية جميلة شفتها فحياتي ، باعشق كلشي فيك ، كلشي من صوتك ، شكل المتكاملة وجسمك الخفيف ، نحافتك ، وجهك ، شعرك سواء صحي او مريض باعشق كل شعرة فيه ، انفك ، عيونك الهادئة الي تخليني مغرم بيها ، شفتاك الي زي الؤلؤ ، وجنتيك المنتفختين الي بدي اعض وابوش فيهم 🙂 ، الوشمة الي تحت عينك الي تخليك مثالية اكثرر ، ايا يكن وكيف ما كنتي ومهما يصير ، انتي اجمل فتاة واكثر فتاة مثالية في العالم عندي ، باعشق كل شي فيك من اول شعرك لاخر قدميك ، باعشقك وباحبك ومافي حاجة ابدا رح تغير دا .</p>
+<p>لما قلتي لي انك ولا مرة شفتيني زعلان او غاضب منك وانك بدك تشوفيني ، اعرف اني باحرمك من جانب من شخصيتي من حقك تعرفيه ، بس والله ماقدر والله ، لو بدي ولو حاولت ما رح اقدر ، كيف تتخيلي اني ازعل او اغضب من شخص كلمة او كلمتين منه تمحي همومي كلها ، سماع صوته بس بيخليني انسى الدنيا وما فيها ، من دون حتى ما احتاج اشتكي لك ، بتخلي يومي افضل وافضل ، ودي الحقيقة والله ، وبرضو ما بدي ازعجك بمشاكلي ادري اني باطلب منك دايما تصارحيني بكل شيء ، واني بدي اشوفك زي ما انتي عشانك كاملة فنضري ، بس انا ما بدي تشوفيني ضعيف او بكاء ، ما بدي الفتاة الي احلم اعيش حياتي معها تشوفني مثير للشفقة ، بدي اعتذر بس ممنوع علي هيهيههي 🙃 ، ولكن هاوعدك من الحين ، اني ما رح خبي عليك شي واني ما رح اتصنع عشان اعجبك واني رح خليكي تشوفيني زي ما انا ، بعيوبي وايجابياتي ، لو بدك طبعا ، وفنفس الوقت ما رح اثقل عليك ولو طلبتي مني او قلتي اني مش عبء عليك ، انا باعشقك وبدياكي زوجتي لهيك هاخليك تشوفي وتحكمي بنفسك ، واي قرار بتقريريه حبيبتي انا معك ، مهما يكن ، بديت الخبط ادري 🙂🙂 وععععععع .</p>
+<p>ادري اني باضغط عليكي احيانا ، واحيانا تصرفاتي بتكون مبالغ فيها ، بس والله عشانك ، كلانا بيعرف انو الجيل الي احنا فيه اسوء جيل ، بشر زنوج ، تبا للحياة ، وانا بدي احميك ، مع انو ادري مقدر احميك تماما ، بس بدي ، ما بدي شوفك زعلانة او شوف حد بيستغلك او يضحك عليك ، لهيك بلييز تحمليني واعرفي انو كلشي بيبدو مبالغة مني ، هو عشان بدي احمي اعز انسانة عندي ، من العالم النجس الي بنعيش فيه .</p>
+<p>واخيرا هاقول انو الرسالة دي مباشرة من قلبي ، بدون مجاملة ولا شي ، الي جت فقلبي باكتبها ، وفي صراحة الكثييييير والكثييييييير لسا بدي اقوله ، بس ما رح خلص ابدا هه ، وما بدي الرسالة تكون طويلة او تطون مثالية ، بدياها تكون صادقة زي ما طلبتي ، وهاختم بانو مهما وصفتك ، ومهما تغزلت ، فما رح اوفيك حقك ، وما في كلمات تقدر توصفك ، انتي اكثر انسانة مثالية واكثر انسانة باعشقها والوحيدة الي بتملأ عيني ، والوحيدة الي بدياها بحانبي للابد .<br>احببتك ، واحبك ، وساضل احبك الي الابد 🤍 .</p>
+        </div>
+        <p class="letter-signature">🤍</p>
+      </article>
+    </section>
+
+    <!-- 06 / IF I WERE THERE -->
+    <section class="chapter section together-section" id="together">
+      <div class="section-heading">
+        <p class="eyebrow">الفصل الخامس · أمنية صغيرة</p>
+        <h2>لو كنت<br><em>بقربكِ</em></h2>
+        <p class="section-intro">اختاري لحظة صغيرة من أمنية أتمنى أن أعيشها معكِ.</p>
+      </div>
+      <div class="daydream-layout">
+        <div class="daydream-menu" role="group" aria-label="اختاري لحظة من يوم ميلادكِ">
+          <button class="daydream-choice active" type="button" data-dream="gift"><span>01</span> هدية صغيرة</button>
+          <button class="daydream-choice" type="button" data-dream="walk"><span>02</span> نزهة هادئة</button>
+          <button class="daydream-choice" type="button" data-dream="treat"><span>03</span> شيء تحبينه</button>
+          <button class="daydream-choice" type="button" data-dream="hug"><span>04</span> عناق طويل</button>
+        </div>
+        <div class="daydream-display" aria-live="polite">
+          <div class="daydream-icon" id="dreamIcon">🎁</div>
+          <p class="tiny-label" id="dreamLabel">أولاً وقبل كل شيء</p>
+          <h3 id="dreamTitle">هدية صغيرة</h3>
+          <p id="dreamText">سأختار لكِ شيئاً بعناية، ثم أنتظر ابتسامتكِ وأنتِ تفتحينه.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 / FINAL WISH -->
+    <section class="chapter section final-section" id="wish">
+      <div class="moon" aria-hidden="true"><span></span></div>
+      <p class="eyebrow">الصفحة الأخيرة · وليست الأمنية الأخيرة</p>
+      <h2>أتمنى أن تكون<br><em>هذه السنة لطيفة عليكِ.</em></h2>
+      <div class="final-wishes">
+        <p>أسباب أكثر لتبتسمي.</p>
+        <p>لحظات أكثر تفخرين بها.</p>
+        <p>طمأنينة أكبر في قلبكِ.</p>
+        <p>أحلام تقترب من التحقق.</p>
+      </div>
+      <button class="primary-button" id="finalSurprise" type="button">سر صغير أخير <span>✧</span></button>
+      <p class="final-secret" id="finalSecret" hidden> مهما حملت لكِ الأيام، أتمنى ألا تنسي أنكِ تستحقين الخير والراحة والحب. عيد ميلاد سعيد مزتييييي. ♡</p>
+      <p class="final-signature">عيد ميلاد سعيد يا أغلى فتاة. <span>♡</span></p>
+      <div class="hidden-star star-hidden-one" data-secret="رسالة صغيرة منكِ قادرة أن تجعل يومي مختلفاً.">✦</div>
+      <div class="hidden-star star-hidden-two" data-secret="أتمنى أن نصنع معاً ذكريات كثيرة أخرى.">✧</div>
+      <div class="hidden-star star-hidden-three" data-secret="هذا العالم الصغير صُنع لكِ وحدكِ.">✦</div>
+      <p class="star-counter" id="starCounter">هناك ثلاث نجمات صغيرة تختبئ في هذا الفصل.</p>
+      <div class="last-confession" dir="rtl">
+        <p class="tiny-label">اعتراف أخير</p>
+        <p>حبيبتي ، ادري الكلام دا بكير اقوله ، بس ، هل تقبلين بي شريك لحياتك في السراء والضراء ، والحزن والفرح ، وسندا لكي .</p>
+        <small>مو محتاجة تردي بس حبيت اسأل 🙃🙃💕</small>
+      </div>
+    </section>
+  </main>
+
+  
+
+  <div class="chapter-controls" id="chapterControls" aria-label="التنقل بين الفصول">
+    <button type="button" id="previousChapter" class="chapter-nav-button" disabled>السابق</button>
+    <div class="chapter-progress">
+      <span id="chapterCount">١ / ٧</span>
+      <div class="progress-track"><span id="progressFill"></span></div>
+      <small id="chapterName">البداية</small>
+    </div>
+    <button type="button" id="nextChapter" class="chapter-nav-button">الفصل التالي</button>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <audio id="backgroundMusic" src="assets/music.mp3" loop preload="none"></audio>
+</body>
+</html>
